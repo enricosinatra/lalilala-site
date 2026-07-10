@@ -5,43 +5,40 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Lalilala.design — Full-stack development, DevOps, service design & data, delivered together</title>
 <meta name="description" content="Lalilala.design is the unified studio behind Lalilala.org, Flazio, and Ludociels pour tous — full-stack development, DevOps, service design, and data, delivered the way government and enterprise teams actually work.">
-
+ 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-
+ 
 <style>
-  /* ============================================================
-     EDITABLE TOKENS — change colors/fonts here, everything updates
-     ============================================================ */
   :root{
-    --paper:      #F1F2F0;   /* page background */
-    --paper-2:    #E8E9E5;   /* slightly deeper panel background */
-    --ink:        #14171C;   /* primary text / near-black */
-    --ink-soft:   #4A4E55;   /* secondary text */
-    --line:       #D2D4CE;   /* hairline borders */
-    --accent:     #C9791A;   /* primary accent — ochre */
-    --accent-ink: #93590F;   /* deeper ochre for hover/text-on-light */
-    --warm:       #8A5A20;   /* secondary mark — bronze (same warm family, deeper) */
-    --dark:       #14171C;   /* dark section background */
+    --paper:      #F1F2F0;
+    --paper-2:    #E8E9E5;
+    --ink:        #14171C;
+    --ink-soft:   #4A4E55;
+    --line:       #D2D4CE;
+    --accent:     #C9791A;
+    --accent-ink: #93590F;
+    --warm:       #8A5A20;
+    --dark:       #14171C;
     --dark-line:  #33363D;
     --on-dark:    #EDEEEA;
     --on-dark-soft: #A6A9A2;
-
+ 
     --serif: 'Fraunces', Georgia, serif;
     --mono:  'IBM Plex Mono', ui-monospace, Menlo, monospace;
     --sans:  'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-
+ 
     --max: 1120px;
   }
-
+ 
   *{ box-sizing:border-box; }
   html{ scroll-behavior:smooth; }
   @media (prefers-reduced-motion: reduce){
     html{ scroll-behavior:auto; }
     *{ animation-duration:0.001ms !important; transition-duration:0.001ms !important; }
   }
-
+ 
   body{
     margin:0;
     background:var(--paper);
@@ -51,17 +48,26 @@
     line-height:1.6;
     -webkit-font-smoothing:antialiased;
   }
-
+ 
   a{ color:inherit; }
   img{ max-width:100%; display:block; }
-
+ 
   .wrap{ max-width:var(--max); margin:0 auto; padding:0 28px; }
-
+ 
   :focus-visible{
     outline:2px solid var(--accent);
     outline-offset:3px;
   }
-
+ 
+  .ext-link{
+    color:var(--accent-ink);
+    text-decoration:underline;
+    text-decoration-color:var(--line);
+    text-underline-offset:2px;
+    transition:text-decoration-color .15s ease;
+  }
+  .ext-link:hover{ text-decoration-color:var(--accent-ink); }
+ 
   /* ---------- Nav ---------- */
   header.site-nav{
     position:sticky; top:0; z-index:50;
@@ -88,7 +94,7 @@
     background:var(--accent);
     display:inline-block;
   }
-  nav.links{ display:flex; gap:32px; }
+  nav.links{ display:flex; gap:28px; }
   nav.links a{
     font-family:var(--mono);
     font-size:12.5px;
@@ -112,8 +118,7 @@
     white-space:nowrap;
   }
   .nav-cta:hover{ background:var(--ink); color:var(--paper); }
-  .menu-btn{ display:none; }
-
+ 
   /* ---------- Hero / letterhead ---------- */
   .hero{ padding:64px 0 0; }
   .doc-meta-top{
@@ -135,7 +140,7 @@
     background:#3F9142;
     display:inline-block;
   }
-
+ 
   .hero h1{
     font-family:var(--serif);
     font-weight:500;
@@ -152,7 +157,7 @@
   .hero .sub{
     font-size:clamp(17px, 2vw, 20px);
     color:var(--ink-soft);
-    max-width:46ch;
+    max-width:48ch;
     margin:0 0 40px;
   }
   .hero-ctas{ display:flex; gap:16px; flex-wrap:wrap; margin-bottom:64px; }
@@ -178,8 +183,7 @@
     color:var(--ink);
   }
   .btn-secondary:hover{ border-color:var(--accent-ink); color:var(--accent-ink); }
-
-  /* letterhead field grid */
+ 
   .field-grid{
     display:grid;
     grid-template-columns:repeat(4, 1fr);
@@ -206,7 +210,7 @@
     color:var(--ink);
     line-height:1.5;
   }
-
+ 
   /* ---------- Section shell ---------- */
   section{ padding:96px 0; border-bottom:1px solid var(--line); }
   section.no-border{ border-bottom:none; }
@@ -232,15 +236,15 @@
     font-size:clamp(28px, 4vw, 40px);
     line-height:1.12;
     margin:0 0 20px;
-    max-width:20ch;
+    max-width:22ch;
   }
   .section-intro{
     color:var(--ink-soft);
-    max-width:62ch;
+    max-width:64ch;
     font-size:16.5px;
     margin-bottom:56px;
   }
-
+ 
   /* ---------- Positioning statement ---------- */
   .statement{
     font-family:var(--serif);
@@ -271,8 +275,8 @@
     display:block;
     margin-bottom:10px;
   }
-
-  /* ---------- Services (numbered like RFQ service areas) ---------- */
+ 
+  /* ---------- Services ---------- */
   .service-list{ border-top:1px solid var(--line); }
   .service-row{
     display:grid;
@@ -306,7 +310,7 @@
     margin:0;
     max-width:52ch;
   }
-
+ 
   /* ---------- Proof band (dark) ---------- */
   .proof{
     background:var(--dark);
@@ -340,11 +344,139 @@
     color:var(--on-dark-soft);
     line-height:1.5;
   }
-
+  .proof-note{
+    margin-top:28px;
+    font-size:14px;
+    color:var(--on-dark-soft);
+    max-width:70ch;
+  }
+  .proof-note a{ color:var(--on-dark); text-decoration:underline; text-decoration-color:var(--dark-line); }
+  .proof-note a:hover{ text-decoration-color:var(--on-dark); }
+ 
+  /* ---------- Team ---------- */
+  .team-subhead{
+    font-family:var(--mono);
+    font-size:12px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    margin:0 0 18px;
+  }
+  .leadership-grid{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+    margin-bottom:56px;
+  }
+  .leadership-card{
+    background:var(--paper);
+    padding:34px 32px;
+  }
+  .leadership-card .role{
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:var(--warm);
+    margin-bottom:12px;
+  }
+  .leadership-card h3{
+    font-family:var(--serif);
+    font-weight:500;
+    font-size:26px;
+    margin:0 0 6px;
+  }
+  .leadership-card .sub{
+    font-family:var(--mono);
+    font-size:12px;
+    color:var(--ink-soft);
+    margin-bottom:16px;
+    display:block;
+  }
+  .leadership-card p{
+    font-size:14.5px;
+    color:var(--ink-soft);
+    margin:0;
+  }
+  .team-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+  }
+  .team-card{
+    background:var(--paper);
+    padding:28px 26px;
+  }
+  .team-card .role{
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:var(--warm);
+    margin-bottom:12px;
+  }
+  .team-card h3{
+    font-family:var(--serif);
+    font-weight:500;
+    font-size:19px;
+    margin:0 0 4px;
+  }
+  .team-card .years{
+    font-family:var(--mono);
+    font-size:12px;
+    color:var(--ink-soft);
+    margin-bottom:12px;
+    display:block;
+  }
+  .team-card p{
+    font-size:14px;
+    color:var(--ink-soft);
+    margin:0;
+  }
+  .team-note{
+    margin-top:32px;
+    font-size:14.5px;
+    color:var(--ink-soft);
+    max-width:70ch;
+  }
+  .specialist-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+    margin-top:28px;
+  }
+  .specialist-cell{
+    background:var(--paper-2);
+    padding:26px 24px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+  }
+  .specialist-cell .k{
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:var(--warm);
+    margin-bottom:8px;
+    display:block;
+  }
+  .specialist-cell p{
+    font-size:13.5px;
+    color:var(--ink-soft);
+    margin:0;
+  }
+ 
   /* ---------- Work / Portfolio ---------- */
   .work-grid{
     display:grid;
-    grid-template-columns:repeat(3, 1fr);
+    grid-template-columns:repeat(2, 1fr);
     gap:1px;
     background:var(--line);
     border:1px solid var(--line);
@@ -353,7 +485,7 @@
     background:var(--paper);
     padding:32px 28px;
     display:flex; flex-direction:column;
-    min-height:260px;
+    min-height:220px;
   }
   .work-card .tag{
     font-family:var(--mono);
@@ -362,7 +494,7 @@
     text-transform:uppercase;
     color:var(--warm);
     margin-bottom:auto;
-    padding-bottom:60px;
+    padding-bottom:40px;
   }
   .work-card h3{
     font-family:var(--serif);
@@ -375,8 +507,8 @@
     color:var(--ink-soft);
     margin:0;
   }
-
-  /* ---------- Approach / how we work ---------- */
+ 
+  /* ---------- Approach ---------- */
   .approach-grid{
     display:grid;
     grid-template-columns:repeat(4, 1fr);
@@ -399,7 +531,7 @@
     color:var(--ink-soft);
     margin:0;
   }
-
+ 
   /* ---------- Contact ---------- */
   .contact-grid{
     display:grid;
@@ -421,7 +553,7 @@
   .contact-fields{
     border-top:1px solid var(--line);
   }
-
+ 
   /* ---------- Footer ---------- */
   footer{ padding:40px 0 56px; }
   .footer-row{
@@ -433,7 +565,10 @@
   }
   .footer-row a{ text-decoration:none; color:var(--ink-soft); }
   .footer-row a:hover{ color:var(--accent-ink); }
-
+  .footer-links{ display:flex; gap:18px; flex-wrap:wrap; }
+  .footer-links a{ text-decoration:underline; text-decoration-color:var(--line); }
+  .footer-links a:hover{ text-decoration-color:var(--accent-ink); }
+ 
   /* ---------- Responsive ---------- */
   @media (max-width: 860px){
     nav.links{ display:none; }
@@ -441,6 +576,9 @@
     .statement-cols{ grid-template-columns:1fr; gap:32px; }
     .service-row{ grid-template-columns:1fr; gap:10px; }
     .proof-grid{ grid-template-columns:repeat(2, 1fr); }
+    .leadership-grid{ grid-template-columns:1fr; }
+    .team-grid{ grid-template-columns:1fr; }
+    .specialist-grid{ grid-template-columns:1fr; }
     .work-grid{ grid-template-columns:1fr; }
     .approach-grid{ grid-template-columns:repeat(2, 1fr); }
     .contact-grid{ grid-template-columns:1fr; gap:40px; }
@@ -454,7 +592,7 @@
 </style>
 </head>
 <body>
-
+ 
 <!-- ============================================================
      NAV
      ============================================================ -->
@@ -463,6 +601,7 @@
     <a class="wordmark" href="#top"><span class="dot"></span>LALILALA.DESIGN</a>
     <nav class="links">
       <a href="#services">Services</a>
+      <a href="#team">Team</a>
       <a href="#work">Work</a>
       <a href="#approach">Approach</a>
       <a href="#about">About</a>
@@ -470,37 +609,36 @@
     <a class="nav-cta" href="#contact">Start a project →</a>
   </div>
 </header>
-
+ 
 <main id="top">
-
+ 
   <!-- ============================================================
-       HERO — letterhead / dossier style
-       EDIT: headline, subheading, meta fields below
+       HERO
        ============================================================ -->
   <section class="hero no-border">
     <div class="wrap">
-
+ 
       <div class="doc-meta-top">
         <span>REF. LALILALA.DESIGN &nbsp;·&nbsp; MONTRÉAL, QC</span>
         <span class="status-pill"><span class="dot"></span>ACCEPTING NEW MANDATES — 2026</span>
       </div>
-
+ 
       <h1>Design and engineering, <em>delivered as one team.</em></h1>
-      <p class="sub">Full-stack development, DevOps, service design, and data — for public-sector and enterprise teams who need a vendor that ships inside their process, not around it.</p>
-
+      <p class="sub">Lalilala.design is specialized in responding to and delivering Canadian government and provincial-sector mandates — full-stack development, DevOps, service design, and data, backed by an engineering bench built for scale.</p>
+ 
       <div class="hero-ctas">
         <a class="btn-primary" href="#contact">Start a conversation →</a>
-        <a class="btn-secondary" href="#services">View capabilities</a>
+        <a class="btn-secondary" href="#team">Meet the team</a>
       </div>
-
+ 
       <div class="field-grid">
         <div class="field">
           <span class="k">Entity</span>
-          <span class="v">Unified studio — Lalilala.org, Flazio &amp; Ludociels pour tous, operating as one delivery team</span>
+          <span class="v">Unified studio — Lalilala.org, <a class="ext-link" href="https://www.flazio.com" target="_blank" rel="noopener">Flazio</a> &amp; <a class="ext-link" href="https://ludocielspourtous.org" target="_blank" rel="noopener">Ludociels pour tous</a>, operating as one delivery team</span>
         </div>
         <div class="field">
-          <span class="k">Team</span>
-          <span class="v">Montréal, QC · Catania, Italy · Madagascar</span>
+          <span class="k">Market focus</span>
+          <span class="v">Lalilala.design: Canadian provincial &amp; government mandates. <a class="ext-link" href="https://www.flazio.com" target="_blank" rel="noopener">Flazio</a>: European SaaS market — same engineering team behind both.</span>
         </div>
         <div class="field">
           <span class="k">Practice</span>
@@ -511,105 +649,102 @@
           <span class="v">Two-week Agile sprints, on your tools, with your team in the room</span>
         </div>
       </div>
-
+ 
     </div>
   </section>
-
+ 
   <!-- ============================================================
        POSITIONING STATEMENT
-       EDIT: the italic sentence + the two side notes
        ============================================================ -->
   <section id="about">
     <div class="wrap statement-cols">
       <p class="statement">
-        We are <strong>Lalilala.design</strong> — one studio built from three: a Montréal non-profit's discipline, a European engineering team's scale, and a design practice shaped by government and enterprise work. <em>No subcontractor hand-offs. One delivery cycle, start to finish.</em>
+        We are <strong>Lalilala.design</strong> — specialized in responding to and delivering Canadian government and provincial-sector mandates, backed by a European engineering team's scale. <em>No subcontractor hand-offs. One delivery cycle, start to finish.</em>
       </p>
       <div class="statement-side">
         <span class="label">Why it matters to you</span>
         <p>You brief one team, not three companies stitched together after the fact. The same people who scope the work write the code, run the sprints, and sit in your reviews.</p>
-        <p>That team spans a non-profit's mission-driven practice (Ludociels pour tous), a product-design studio (Lalilala.org), and an engineering group maintaining a multi-tenant SaaS platform for 109,000+ live sites (Flazio).</p>
+        <p><a class="ext-link" href="https://www.flazio.com" target="_blank" rel="noopener">Flazio</a> serves the European SaaS market and maintains the multi-tenant platform (109,000+ live sites) that our engineering bench is built on. <strong>Lalilala.design</strong> is the studio specialized in Canadian provincial and government mandates — drawing on that same engineering team, plus a design practice (Lalilala.org) and a Montréal social-economy non-profit focused on digital inclusion (<a class="ext-link" href="https://ludocielspourtous.org" target="_blank" rel="noopener">Ludociels pour tous</a>).</p>
       </div>
     </div>
   </section>
-
+ 
   <!-- ============================================================
-       SERVICES — numbered to mirror real service-area categories
-       EDIT: titles, tool lists, descriptions
+       SERVICES
        ============================================================ -->
   <section id="services">
     <div class="wrap">
       <span class="eyebrow">Capabilities</span>
       <h2 class="section-title">Five practices, one sprint cycle.</h2>
       <p class="section-intro">Each practice below is staffed to a minimum technical threshold, assessed in two phases, and delivered inside the same Agile cadence — whichever combination your mandate needs.</p>
-
+ 
       <div class="service-list">
-
+ 
         <div class="service-row">
           <span class="service-num">01</span>
           <div>
             <h3>Full Stack Development</h3>
-            <span class="stack">React · Vue · Node.js · PHP · PostgreSQL · MongoDB · REST APIs</span>
+            <span class="stack">React · Vue · Next.js · Node.js · PHP · PostgreSQL · MySQL · MongoDB · REST APIs</span>
           </div>
-          <p>Front-end to database, on production systems — not only prototypes. Includes code review discipline and CI/CD from day one.</p>
+          <p>Front-end to database, on production systems serving real traffic — including a multi-tenant SaaS platform running 109,000+ live sites. Code review discipline and CI/CD from day one.</p>
         </div>
-
+ 
         <div class="service-row">
           <span class="service-num">02</span>
           <div>
             <h3>DevOps</h3>
-            <span class="stack">GitHub Actions · Docker · Kubernetes · Terraform · AWS / Azure / GCP</span>
+            <span class="stack">Docker · GCP · AWS · Terraform · CI/CD · Redis · n8n automation</span>
           </div>
-          <p>Pipelines, containerization, and infrastructure-as-code, with architecture decisions and incidents documented as they happen.</p>
+          <p>Pipelines, containerization, and infrastructure-as-code, backed by ISO 9001 / 27001 / 27017 / 27018 and PCI DSS practices carried over from platform operations at scale.</p>
         </div>
-
+ 
         <div class="service-row">
           <span class="service-num">03</span>
           <div>
             <h3>Service Design</h3>
-            <span class="stack">Figma · FigJam / Miro · WCAG 2.1 AA · research synthesis</span>
+            <span class="stack">Figma · FigJam / Miro · Design Thinking · WCAG 2.1 AA · research synthesis</span>
           </div>
-          <p>Journey mapping, prototyping, and stakeholder workshops that hold up in front of non-technical audiences — bilingual FR/EN delivery.</p>
+          <p>Journey mapping, prototyping, and stakeholder workshops proven inside large regulated organizations — banking, government ministries, and international NGOs. Bilingual FR/EN delivery.</p>
         </div>
-
+ 
         <div class="service-row">
           <span class="service-num">04</span>
           <div>
             <h3>Data</h3>
-            <span class="stack">SQL · Python / pandas · Power BI / Tableau · API pipelines</span>
+            <span class="stack">SQL · Excel / BI tooling · API pipelines · data governance</span>
           </div>
-          <p>Data models and dashboards built for business decision-makers, with governance — quality, lineage, access — treated as a deliverable, not an afterthought.</p>
+          <p>Data models and comparison tooling built for real decision-makers — from evaluating dozens of SaaS solutions for a provincial ministry to automated financial reconciliation pipelines.</p>
         </div>
-
+ 
         <div class="service-row">
           <span class="service-num">05</span>
           <div>
             <h3>UX / UI Design</h3>
-            <span class="stack">Prototyping · design systems · accessibility · usability testing</span>
+            <span class="stack">Design systems · prototyping · accessibility · usability testing</span>
           </div>
-          <p>From low-fidelity flows to production-ready design systems, informed by direct work inside large institutional platforms.</p>
+          <p>From low-fidelity flows to production-ready design systems used across 200+ internal applications inside a national financial institution.</p>
         </div>
-
+ 
       </div>
     </div>
   </section>
-
+ 
   <!-- ============================================================
-       PROOF BAND — dark section, real numbers
-       EDIT: figures + labels
+       PROOF BAND
        ============================================================ -->
   <section class="proof no-border">
     <div class="wrap">
       <span class="eyebrow">Track record</span>
       <h2 class="section-title" style="color:var(--on-dark)">Numbers, not adjectives.</h2>
-
+ 
       <div class="proof-grid">
         <div class="proof-cell">
           <div class="num">109,000+</div>
-          <div class="label">Live websites running on infrastructure our engineering team maintains</div>
+          <div class="label">Live websites running on infrastructure our engineering team maintains at Flazio</div>
         </div>
         <div class="proof-cell">
           <div class="num">9+ yrs</div>
-          <div class="label">Continuous corporate delivery experience, 2017–present</div>
+          <div class="label">Continuous engineering leadership on the same SaaS platform, 2017–present</div>
         </div>
         <div class="proof-cell">
           <div class="num">3</div>
@@ -617,52 +752,220 @@
         </div>
         <div class="proof-cell">
           <div class="num">ISO 9001</div>
-          <div class="label">Quality management, alongside ISO 27001/27017/27018 information security practices</div>
+          <div class="label">Quality management, alongside ISO 27001 / 27017 / 27018 and PCI DSS practices</div>
+        </div>
+      </div>
+ 
+      <p class="proof-note">Engineering scale via <a href="https://www.flazio.com" target="_blank" rel="noopener">Flazio</a> (European SaaS market). Canadian government &amp; provincial specialization via Lalilala.org and <a href="https://ludocielspourtous.org" target="_blank" rel="noopener">Ludociels pour tous</a>.</p>
+    </div>
+  </section>
+ 
+  <!-- ============================================================
+       TEAM — real people, real credentials
+       ============================================================ -->
+  <section id="team">
+    <div class="wrap">
+      <span class="eyebrow">The team</span>
+      <h2 class="section-title">The people who show up to your sprints.</h2>
+      <p class="section-intro">No bench of anonymous "resources" — a named team with specific, verifiable track records across engineering, design, and platform operations.</p>
+ 
+      <p class="team-subhead">Co-Founders</p>
+      <div class="leadership-grid">
+ 
+        <div class="leadership-card">
+          <span class="role">Co-Founder &amp; Operations Manager</span>
+          <h3>Stéphanie Akré</h3>
+          <span class="sub">Ludociels pour tous · Montréal, QC · Since 2013</span>
+          <p>Co-founded Ludociels pour tous, a Montréal social-economy non-profit specializing in UX design and digital inclusion for web and video-game interfaces. Twelve years managing administration, finance, and communications for the organization. Together with Enrico Sinatra, co-founds and manages the full Lalilala.design team.</p>
+        </div>
+ 
+        <div class="leadership-card">
+          <span class="role">Co-Founder &amp; Lead UX Designer</span>
+          <h3>Enrico Sinatra</h3>
+          <span class="sub">Lalilala.org · Montréal, QC · 9 years</span>
+          <p>Founded Lalilala.org, growing it from zero to 50+ active client subscriptions. Nine years of UX leadership including a financial risk-management tool for a national banking cooperative, a 200+ app design system, and a solution evaluation for the Ontario Ministry of Natural Resources. Together with Stéphanie Akré, co-founds and manages the full Lalilala.design team.</p>
+        </div>
+ 
+      </div>
+ 
+      <p class="team-subhead">Design &amp; Engineering</p>
+      <div class="team-grid">
+ 
+        <div class="team-card">
+          <span class="role">Chief Technology Officer</span>
+          <h3>Alessio Cantarella</h3>
+          <span class="years">9 years at Flazio · Catania, Italy</span>
+          <p>Leads technology strategy, cloud architecture, DevOps, and cybersecurity for a multi-tenant SaaS platform serving 109,000+ active websites. Oversaw ISO 9001 / 27001 / 27017 / 27018 and PCI DSS certification. Projects: Flazio.com, Posinega.com, Riplia.com, SMASH, Flazio GraSS, Flazio ADI.</p>
+        </div>
+ 
+        <div class="team-card">
+          <span class="role">Tech Lead · Senior Architect</span>
+          <h3>Valerio Lo Santo</h3>
+          <span class="years">20+ years · Catania, Italy</span>
+          <p>Technical leadership of core platform components since 2012, including migration of legacy frontend code to modern JavaScript and architectural work supporting AI and semantic-search initiatives.</p>
+        </div>
+ 
+        <div class="team-card">
+          <span class="role">Lead Full-Stack Developer</span>
+          <h3>Isaac Tewolde</h3>
+          <span class="years">15+ years · Catania, Italy</span>
+          <p>Full-stack and engineering leadership across e-commerce and social platforms, currently modernising CRM architecture and platform-wide monitoring systems.</p>
+        </div>
+ 
+        <div class="team-card">
+          <span class="role">Senior Software Engineer</span>
+          <h3>Alberto Pappalardo</h3>
+          <span class="years">5 years · Catania, Italy</span>
+          <p>Owns projects end-to-end from architecture through deployment, leading AI integration on leading LLM APIs and workflow automation with n8n across the platform.</p>
+        </div>
+ 
+        <div class="team-card">
+          <span class="role">Software Developer · E-commerce Tech Lead</span>
+          <h3>Ivan Sammartino</h3>
+          <span class="years">Since 2018 · Catania, Italy</span>
+          <p>Technical lead for Flazio's e-commerce sector, developing and maintaining features and services within the multi-tenant SaaS platform.</p>
+        </div>
+ 
+        <div class="team-card">
+          <span class="role">Full-Stack Web Developer</span>
+          <h3>Luca Costa</h3>
+          <span class="years">Since 2025 · Catania, Italy</span>
+          <p>Contributed to a healthcare management system for a hospital client and to Posinega.com, building payroll processing and automated bank-reconciliation workflows.</p>
+        </div>
+ 
+        <div class="team-card">
+          <span class="role">Software Developer</span>
+          <h3>Vitalii Babak</h3>
+          <span class="years">Since 2023 · Catania, Italy</span>
+          <p>Develops core web components for the Flazio platform and manages Flazio Domains services, including EPP protocol API development and domain lifecycle management.</p>
+        </div>
+ 
+        <div class="team-card">
+          <span class="role">Service Designer</span>
+          <h3>Thomas Gaudy</h3>
+          <span class="years">PhD · 25+ years · Ludociels pour tous</span>
+          <p>PhD in Computer Science (2008, digital-interface accessibility). 25+ years in UX/UI design and 13+ years leading user research, heuristic evaluation, and usability testing. Direct service-design experience with three Quebec provincial ministries — Immigration (MIDI), Environment (MELCC), and Agriculture, Fisheries and Food (MAPAQ) — plus multiple engagements with Desjardins on banking-software UX.</p>
+        </div>
+ 
+        <div class="team-card">
+          <span class="role">Senior UX Designer · Design Systems</span>
+          <h3>Andrea Calabrò</h3>
+          <span class="years">10+ years · Catania, Italy</span>
+          <p>Owns the design system used across Flazio.com, Flazio Domains, Posinega.com, and Riplia.com — WCAG 2.1 AA components that cut design-to-delivery time by 75% and improved usability by 50%.</p>
+        </div>
+ 
+        <div class="team-card">
+          <span class="role">Junior Web &amp; Graphic Designer</span>
+          <h3>Mendrika Andriamarolafy</h3>
+          <span class="years">Since 2026 · Antananarivo, Madagascar</span>
+          <p>UI/UX Design Manager on the Lalilala.org platform for artists and creative professionals. Full-stack foundations (PHP, Vue.js, React Native, SQL) alongside graphic design (Figma, Adobe XD, branding). Completed a full-stack development internship and contributed level design to a VR project for Institut Français.</p>
+        </div>
+ 
+        <div class="team-card">
+          <span class="role">Junior UI/UX Designer</span>
+          <h3>Harisoa Randriamamonjy</h3>
+          <span class="years">Since 2024 · Antananarivo, Madagascar</span>
+          <p>UI/UX designer with a journalism background, combining visual design, digital communication, and user-needs analysis. Web-design internship at Mediaclick (Figma prototyping) and graphic-design internship at NEXTHOPE, following prior experience in journalism and content production.</p>
+        </div>
+ 
+      </div>
+    </div>
+  </section>
+ 
+  <!-- ============================================================
+       SPECIALIST CONSULTANTS — matched to the mandate
+       ============================================================ -->
+  <section id="specialists">
+    <div class="wrap">
+      <span class="eyebrow">Specialist network</span>
+      <h2 class="section-title">Subject-matter expertise, matched to the mandate.</h2>
+      <p class="section-intro">Government projects often need knowledge no core team holds internally. Beyond our named engineering and design team, we draw on a vetted network of specialist consultants, assembled project by project depending on the mandate in front of us — genuinely Indigenous knowledge-holders for mandates that call for that lens (never a substitute for direct community engagement), forestry and environmental specialists, healthcare and clinical consultants, regulatory and compliance specialists, and other domain experts as the work requires.</p>
+ 
+      <div class="specialist-grid">
+        <div class="specialist-cell">
+          <span class="k">Consultant · Responsible Gambling &amp; Player Protection</span>
+          <p><strong>Giuseppe Gulino</strong> — 15+ years leading customer operations and fraud/support teams across iGaming and crypto platforms (Kindred Group/Unibet, Kraken), working directly with Responsible Gambling teams to embed player-protection practices, escalation processes, and safer-gambling communication into frontline operations.</p>
+        </div>
+        <div class="specialist-cell">
+          <span class="k">Example domains covered on request</span>
+          <p>Indigenous cultural knowledge · forestry &amp; environmental sciences · healthcare &amp; clinical practice · regulated-industry compliance (gambling, financial services) · other domain expertise specific to the mandate.</p>
+        </div>
+        <div class="specialist-cell">
+          <span class="k">How it works</span>
+          <p>Specialists are engaged per mandate under the same Agile delivery process as the core team — briefed into sprints, not bolted on at the end.</p>
         </div>
       </div>
     </div>
   </section>
-
+ 
   <!-- ============================================================
-       WORK / PORTFOLIO
-       EDIT: card tags, titles, descriptions — replace with real case studies as approved
+       WORK / PORTFOLIO — real, anonymized where required
        ============================================================ -->
   <section id="work">
     <div class="wrap">
       <span class="eyebrow">Selected work</span>
       <h2 class="section-title">What the team has shipped.</h2>
-      <p class="section-intro">A sample of the kind of engagements our practice areas cover. Full case studies available on request, subject to client confidentiality.</p>
-
+      <p class="section-intro">A sample of the engagements our practice areas cover. Client names anonymized where required by confidentiality; full case studies available on request.</p>
+ 
       <div class="work-grid">
         <div class="work-card">
-          <span class="tag">UX / UI · Research</span>
-          <h3>Enterprise design system, built for scale</h3>
-          <p>A reusable component library and design language deployed across 200+ internal applications for a large financial institution.</p>
+          <span class="tag">Full Stack · SaaS Ecosystem</span>
+          <h3>Flazio product ecosystem — 109,000+ live sites</h3>
+          <p>Ongoing architecture, feature delivery, and AI integration across <a class="ext-link" href="https://www.flazio.com" target="_blank" rel="noopener">Flazio</a>'s product line: the core website-builder platform (Flazio.com), the fintech product Posinega.com, plus Riplia.com, SMASH, Flazio GraSS, and Flazio ADI.</p>
         </div>
         <div class="work-card">
-          <span class="tag">Service Design</span>
-          <h3>ServiceNow platform design system</h3>
-          <p>Centralized UI, UX, and innovation guidelines for a ServiceNow implementation, cutting design-to-build time measurably.</p>
+          <span class="tag">Full Stack · Healthcare</span>
+          <h3>Healthcare management system for a hospital client</h3>
+          <p>Full-stack contribution to a healthcare management platform, alongside domain lifecycle and registrar integration work (EPP protocol API) supporting thousands of managed domains.</p>
         </div>
         <div class="work-card">
-          <span class="tag">Full Stack · Internal Tools</span>
-          <h3>Internal software UX/UI overhaul</h3>
-          <p>Redesigned internal workflow tooling end-to-end — from user research through to shipped interface.</p>
+          <span class="tag">DevOps · Platform Modernization</span>
+          <h3>CRM redesign and platform-wide health monitoring</h3>
+          <p>Re-architected a company CRM system for maintainability, built a health-check system monitoring availability across all hosted domains, and migrated legacy jQuery frontend components to modern Vanilla JavaScript for performance and reliability.</p>
+        </div>
+        <div class="work-card">
+          <span class="tag">Full Stack · Accessibility</span>
+          <h3>WCAG 2.1-compliant travel booking portal</h3>
+          <p>Designed and engineered an accessible travel portal from the ground up to WCAG 2.1 standards, plus UI components for a B2B booking portal and a CMS platform serving dozens of client sites.</p>
+        </div>
+        <div class="work-card">
+          <span class="tag">Service Design · Fintech</span>
+          <h3>Financial risk-management tool for a national banking cooperative</h3>
+          <p>Led research-to-vision design across 30+ workshops, streamlining 22 business processes down to 17 for a predictive risk-monitoring tool covering loans from $850K to $10M.</p>
+        </div>
+        <div class="work-card">
+          <span class="tag">Design System · Enterprise</span>
+          <h3>ServiceNow platform design system, 200+ internal apps</h3>
+          <p>Centralized UI, UX, and innovation guidelines for a ServiceNow implementation inside a major financial institution, cutting design-to-build time and reducing coordination overhead.</p>
+        </div>
+        <div class="work-card">
+          <span class="tag">Data · Government</span>
+          <h3>SaaS solution evaluation for the Ontario Ministry of Natural Resources</h3>
+          <p>Assessed 30–70 candidate web and SaaS solutions against user needs, accessibility, and business goals, narrowing to a shortlist with Excel-based comparison tooling for stakeholder decision-making.</p>
+        </div>
+        <div class="work-card">
+          <span class="tag">Service Design · Government</span>
+          <h3>UX audits across three Quebec provincial ministries</h3>
+          <p>Heuristic evaluations and improvement roadmaps for the Ministère de l'Immigration (digital tools and the Arrima portal), the Ministère de l'Environnement (a contaminated-soil traceability tool), and the Ministère de l'Agriculture, des Pêcheries et de l'Alimentation (a livestock antibiotic-traceability tool).</p>
+        </div>
+        <div class="work-card">
+          <span class="tag">Service Design · Accessibility</span>
+          <h3>Inclusive design with blind, low-vision, and Deaf users</h3>
+          <p>User testing and concept design for an accessible online art project with blind and low-vision testers, a communication-tool concept for Deaf users, and a WCAG-focused UX audit and staff training for a legal-information non-profit.</p>
         </div>
       </div>
     </div>
   </section>
-
+ 
   <!-- ============================================================
-       APPROACH — how the team actually works
-       EDIT: step labels + copy
+       APPROACH
        ============================================================ -->
   <section id="approach">
     <div class="wrap">
       <span class="eyebrow">How we work</span>
       <h2 class="section-title">Your team sits in our sprints. Literally.</h2>
       <p class="section-intro">Two-week cycles, four ceremonies, no separate "internal-only" track. Knowledge transfer happens inside the work, not as a phase bolted on at the end.</p>
-
+ 
       <div class="approach-grid">
         <div class="approach-card">
           <span class="step">Daily</span>
@@ -687,10 +990,9 @@
       </div>
     </div>
   </section>
-
+ 
   <!-- ============================================================
        CONTACT
-       EDIT: email address + note
        ============================================================ -->
   <section id="contact" class="no-border">
     <div class="wrap contact-grid">
@@ -698,13 +1000,13 @@
         <span class="eyebrow">Get in touch</span>
         <h2 class="section-title">Tell us what you're building.</h2>
         <a class="contact-email" href="mailto:hello@lalilala.design">hello@lalilala.design</a>
-        <p class="contact-note">Based in Montréal, working with teams everywhere. We typically respond within two business days.</p>
+        <p class="contact-note">Based in Tiohtià:ke/Montréal — the traditional and unceded territory of the Kanien'kehá:ka (Mohawk) Nation, a place that has long served as a gathering site for many First Nations. We typically respond within two business days.</p>
       </div>
-
+ 
       <div class="contact-fields">
         <div class="field">
           <span class="k">Government / RFQ inquiries</span>
-          <span class="v">rfq@lalilala.design</span>
+          <span class="v">stephanie@lalilala.design</span>
         </div>
         <div class="field">
           <span class="k">Based in</span>
@@ -713,47 +1015,40 @@
       </div>
     </div>
   </section>
-
+ 
 </main>
-
+ 
 <!-- ============================================================
      FOOTER
      ============================================================ -->
 <footer>
   <div class="wrap footer-row">
-    <span>© 2026 Lalilala.design — Lalilala.org · Flazio · Ludociels pour tous</span>
-    <span>
+    <span>© 2026 Lalilala.design — Lalilala.org · <a class="ext-link" href="https://www.flazio.com" target="_blank" rel="noopener">Flazio</a> · <a class="ext-link" href="https://ludocielspourtous.org" target="_blank" rel="noopener">Ludociels pour tous</a></span>
+    <span class="footer-links">
+      <a href="https://www.flazio.com" target="_blank" rel="noopener">flazio.com</a>
+      <a href="https://ludocielspourtous.org" target="_blank" rel="noopener">ludocielspourtous.org</a>
       <a href="#top">Back to top ↑</a>
     </span>
   </div>
 </footer>
-
+ 
 <script>
-  // Mobile nav could be added here later if needed — kept out for now to stay simple.
-
-  // --- Iframe auto-resize -------------------------------------------------
-  // If this page is embedded in an <iframe>, it reports its real content
-  // height to the parent page via postMessage, so the parent can resize the
-  // iframe and avoid inner scrollbars / cut-off content. See the matching
-  // parent-side listener snippet provided alongside this file.
   (function () {
-    if (window.self === window.top) return; // not embedded, do nothing
-
+    if (window.self === window.top) return;
     function reportHeight() {
       var height = document.documentElement.scrollHeight;
       window.parent.postMessage({ type: 'lalilala-embed-height', height: height }, '*');
     }
-
     window.addEventListener('load', reportHeight);
     window.addEventListener('resize', reportHeight);
-
     if (window.ResizeObserver) {
       new ResizeObserver(reportHeight).observe(document.body);
     } else {
-      setInterval(reportHeight, 800); // simple fallback
+      setInterval(reportHeight, 800);
     }
   })();
 </script>
-
+ 
 </body>
 </html>
+ 
